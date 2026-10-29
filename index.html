@@ -4,193 +4,274 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Barrow-in-Furness</title>
+<meta name="description" content="A guide to Barrow-in-Furness: its submarine yard, history, Barrow AFC, Walney Island, Furness Abbey, a day-out planner and a quiz.">
 <style>
-:root{--bg:#f3f6f9;--card:#fff;--text:#14202b;--muted:#586875;--accent:#0a5ea8;--accent2:#e0a21b;--line:#d6dee6;--h1:#06284a;--h2:#1a7fc4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d141b;--card:#16212b;--text:#e8eef3;--muted:#9fb0bd;--accent:#5db4f2;--line:#26343f;--h1:#041527;--h2:#0d4a7c}}
-:root[data-theme="dark"]{--bg:#0d141b;--card:#16212b;--text:#e8eef3;--muted:#9fb0bd;--accent:#5db4f2;--line:#26343f;--h1:#041527;--h2:#0d4a7c}
-html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.65 Georgia,'Times New Roman',serif}
-button{font:inherit;cursor:pointer}
-.credit{position:fixed;top:0;right:0;z-index:50;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;font:600 .85rem system-ui,sans-serif;color:#fff;background:rgba(4,21,39,.85);border-bottom-left-radius:12px;backdrop-filter:blur(6px)}
-.bar{position:fixed;top:0;left:0;height:4px;width:0;background:var(--accent2);z-index:60}
-nav{position:sticky;top:0;z-index:40;display:flex;gap:6px;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 190px 10px 14px;background:rgba(4,21,39,.85);backdrop-filter:blur(8px);font-family:system-ui,sans-serif;overflow-x:auto;white-space:nowrap}
-nav a{color:#cfe3f5;text-decoration:none;padding:6px 12px;border-radius:99px;font-size:.88rem}
-nav a.on{background:var(--accent2);color:#1b1300;font-weight:600}
-#theme{margin-left:auto;background:none;border:1px solid #5a7a96;color:#fff;border-radius:99px;padding:5px 10px}
-.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--h1),var(--h2));color:#fff;text-align:center;padding:90px 20px 150px}
-.hero h1{font-size:clamp(2.3rem,9vw,5rem);margin:0;letter-spacing:-.02em}
-.hero p{max-width:580px;margin:10px auto 0;font-size:1.15rem;opacity:.93}
-#ty{color:var(--accent2);font-style:italic;min-height:1.7em;margin-top:14px;font-size:1.1rem}
-.sea{position:absolute;left:0;bottom:0;width:100%;height:130px}
-.sub{position:absolute;bottom:62px;left:-160px;width:150px;animation:cruise 22s linear infinite}
-@keyframes cruise{to{left:110%}}
-.w1{animation:wave 9s linear infinite}.w2{animation:wave 14s linear infinite reverse}
-@keyframes wave{to{transform:translateX(-50%)}}
-.steam{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:12px 24px;border-radius:99px;background:#171a21;color:#fff;border:2px solid #66c0f4;font:600 1rem system-ui,sans-serif;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.2s}.steam:hover{background:#66c0f4;color:#0b1520;transform:translateY(-2px)}.steam svg{width:22px;height:22px}
-main{max-width:900px;margin:0 auto;padding:30px 18px 50px}
-section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin-bottom:24px;box-shadow:0 4px 18px rgba(0,0,0,.06)}
-.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
-h2{margin:0 0 12px;color:var(--accent);font-size:1.7rem}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;font-family:system-ui,sans-serif}
-.st{background:var(--bg);border-radius:14px;padding:16px;text-align:center}
-.st b{display:block;font-size:1.9rem;color:var(--accent)}.st span{font-size:.82rem;color:var(--muted)}
-.tl{position:relative;display:flex;gap:6px;overflow-x:auto;padding:12px 0;font-family:system-ui,sans-serif}
-.tl button{flex:1;min-width:84px;border:2px solid var(--line);background:var(--bg);color:var(--text);border-radius:12px;padding:10px 6px;font-weight:600}
-.tl button.on{border-color:var(--accent2);background:var(--accent2);color:#1b1300}
-.panel{background:var(--bg);border-left:5px solid var(--accent2);border-radius:10px;padding:14px 18px;min-height:96px}
-.panel h3{margin:0 0 4px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;font-family:system-ui,sans-serif}
-.tabs button{border:1px solid var(--line);background:var(--bg);color:var(--text);padding:8px 16px;border-radius:99px}
-.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-details{border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px;background:var(--bg)}
-summary{cursor:pointer;font:600 1rem system-ui,sans-serif;color:var(--text)}
-details p{margin:10px 0 0}
-.card{margin:0 0 8px}.card b{color:var(--accent)}
-.q{font-family:system-ui,sans-serif}
-.q h3{font-family:Georgia,serif;margin:0 0 12px}
-.opts{display:grid;gap:8px}
-.opts button{text-align:left;border:2px solid var(--line);background:var(--bg);color:var(--text);padding:11px 14px;border-radius:12px}
-.opts button.ok{border-color:#2e9e5b;background:rgba(46,158,91,.18)}.opts button.no{border-color:#d1493f;background:rgba(209,73,63,.16)}
-.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.88rem;margin-bottom:8px}
-.next{margin-top:12px;background:var(--accent);color:#fff;border:0;padding:9px 18px;border-radius:99px}
-footer{text-align:center;color:var(--muted);padding:0 20px 40px;font:.85rem system-ui,sans-serif}
-#top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:0;background:var(--accent2);color:#1b1300;font-size:1.2rem;opacity:0;pointer-events:none;transition:.3s;z-index:40}
-#top.show{opacity:1;pointer-events:auto}
-@media (prefers-reduced-motion:reduce){.sub,.w1,.w2{animation:none}.rv{opacity:1;transform:none;transition:none}}
+:root{--bg:#fafafa;--sf:#fff;--tx:#0f172a;--mu:#64748b;--ln:#e5e7eb;--ac:#2563eb;--ac2:#f59e0b;--gl:rgba(255,255,255,.78);--sea:#dbeafe;--land:#e7e5df;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0f14;--sf:#121922;--tx:#e6edf3;--mu:#8b9aaa;--ln:#1f2a36;--ac:#60a5fa;--gl:rgba(11,15,20,.78);--sea:#0e2236;--land:#1c2530}}
+:root[data-theme="dark"]{--bg:#0b0f14;--sf:#121922;--tx:#e6edf3;--mu:#8b9aaa;--ln:#1f2a36;--ac:#60a5fa;--gl:rgba(11,15,20,.78);--sea:#0e2236;--land:#1c2530}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}a{color:var(--ac)}
+header{position:fixed;inset:0 0 auto 0;z-index:50;padding:env(safe-area-inset-top,0px) 0 0;background:var(--gl);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln)}
+.hb{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:12px 18px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none;color:var(--tx)}
+.links{display:flex;gap:2px;margin-left:10px}.links a{color:var(--mu);text-decoration:none;font-size:.88rem;padding:6px 10px;border-radius:8px}
+.links a:hover,.links a.on{color:var(--tx);background:var(--ln)}
+.sp{flex:1}
+.ib{border:1px solid var(--ln);background:var(--sf);border-radius:10px;padding:6px 11px;font-size:.85rem}
+.credit{font-size:.82rem;font-weight:600;white-space:nowrap}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--ac)}
+@media(max-width:860px){.links{display:none}.credit{font-size:.72rem}}
+.hero{position:relative;overflow:hidden;padding:150px 20px 90px;text-align:center}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;z-index:-1;animation:fl 16s ease-in-out infinite alternate}
+.b1{width:420px;height:420px;background:#3b82f6;left:-80px;top:40px}.b2{width:380px;height:380px;background:#f59e0b;right:-60px;top:120px;animation-delay:-6s;opacity:.3}
+@keyframes fl{to{transform:translate(40px,30px) scale(1.12)}}
+.tag{display:inline-block;border:1px solid var(--ln);background:var(--sf);border-radius:99px;padding:4px 14px;font-size:.8rem;color:var(--mu)}
+h1{font-size:clamp(2.6rem,9vw,5.8rem);line-height:1.02;letter-spacing:-.04em;margin:18px 0 14px;background:linear-gradient(120deg,var(--tx),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:600px;margin:0 auto;color:var(--mu);font-size:1.15rem}
+#ty{height:1.7em;margin-top:14px;color:var(--ac);font-weight:600}
+.cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:99px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--ln);background:var(--sf);color:var(--tx);transition:.2s}
+.btn.p{background:var(--tx);color:var(--bg);border-color:var(--tx)}.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.btn.st{background:#171a21;color:#fff;border-color:#66c0f4}.btn.st:hover{background:#66c0f4;color:#0b1520}
+.btn svg{width:18px;height:18px}
+main{max-width:1100px;margin:0 auto;padding:0 18px;min-height:70vh}
+section{display:none;padding:70px 0}
+main section.cur{display:block;padding:130px 0 70px;animation:pgin .5s}
+main section.cur.rv{opacity:1;transform:none}
+@keyframes pgin{from{opacity:0;transform:translateY(14px)}}
+.hero{display:none}body[data-v="home"] .hero{display:block}body[data-v="home"] #tiles{display:block;padding:40px 0 70px}
+a.card{display:block;text-decoration:none;color:var(--tx)}
+.eb{color:var(--ac);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4.5vw,2.8rem);letter-spacing:-.03em;line-height:1.1;margin:8px 0 14px}
+.sub{color:var(--mu);max-width:640px;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:20px;transition:.25s;text-align:left;width:100%}
+button.card:hover,.card.hv:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.1);border-color:var(--ac)}
+.num{font-size:2.4rem;font-weight:800;letter-spacing:-.03em;color:var(--ac)}.card small{color:var(--mu)}
+.card h3{margin:0 0 6px;font-size:1.05rem}.card p{margin:0;color:var(--mu);font-size:.93rem}
+.chip{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:2px 9px;border-radius:99px;background:var(--ln);color:var(--mu);margin-bottom:8px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.two{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:start}@media(max-width:820px){.two{grid-template-columns:1fr}}
+#mapw{background:var(--sea);border:1px solid var(--ln);border-radius:22px;overflow:hidden}
+#mapw svg{display:block;width:100%;height:auto}.land{fill:var(--land);stroke:var(--ln);stroke-width:2}
+.pin{cursor:pointer;outline:none}.pin circle{fill:var(--ac2);stroke:#fff;stroke-width:3;transition:.2s}.pin:hover circle,.pin:focus circle,.pin.on circle{fill:var(--ac);r:13}
+.pin text{font:600 12px system-ui;fill:var(--tx);paint-order:stroke;stroke:var(--sea);stroke-width:4px}
+.info{position:sticky;top:90px;min-height:170px}
+.tl{position:relative;margin-left:10px;border-left:2px solid var(--ln);padding-left:26px}
+.ti{position:relative;margin-bottom:26px}.ti::before{content:"";position:absolute;left:-35px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ac2);border:3px solid var(--bg)}
+.ti b{color:var(--ac)}.ti h3{margin:2px 0 4px}.ti p{margin:0;color:var(--mu)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{border:1px solid var(--ln);background:var(--sf);border-radius:99px;padding:7px 16px;font-size:.88rem}.tabs button.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.sw{height:90px;position:relative;overflow:hidden;border-radius:14px;background:var(--sea);margin-bottom:14px}
+.sw svg{position:absolute;bottom:14px;width:130px;animation:go 9s linear infinite}@keyframes go{from{left:-140px}to{left:100%}}
+details{border:1px solid var(--ln);background:var(--sf);border-radius:14px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mu);margin:10px 0 0}
+.bar{height:6px;background:var(--ln);border-radius:9px;overflow:hidden;margin:10px 0 18px}.bar i{display:block;height:100%;width:0;background:var(--ac);transition:.4s}
+.opt{display:block;width:100%;text-align:left;margin-bottom:8px;border:1.5px solid var(--ln);background:var(--sf);border-radius:12px;padding:12px 16px}
+.opt:hover{border-color:var(--ac)}.opt.ok{border-color:#16a34a;background:rgba(22,163,74,.14)}.opt.no{border-color:#dc2626;background:rgba(220,38,38,.12)}
+dialog{border:1px solid var(--ln);background:var(--sf);color:var(--tx);border-radius:18px;padding:0;width:min(560px,92vw);margin-top:12vh;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
+#pi{width:100%;border:0;border-bottom:1px solid var(--ln);background:transparent;color:var(--tx);padding:16px 20px;font:inherit;outline:none}
+#pr{max-height:320px;overflow:auto;padding:8px}#pr button{display:flex;justify-content:space-between;width:100%;border:0;background:none;padding:10px 12px;border-radius:10px;text-align:left}
+#pr button:hover,#pr button.on{background:var(--ln)}#pr span{color:var(--mu);font-size:.8rem}
+footer{border-top:1px solid var(--ln);padding:34px 18px 50px;text-align:center;color:var(--mu);font-size:.88rem}
+#up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);opacity:0;pointer-events:none;transition:.3s;z-index:40}#up.s{opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="bar" id="bar"></div>
-<div class="credit">Made by George Plots Allen</div>
-<nav id="nav">
-  <a href="#home">Home</a><a href="#facts">Facts</a><a href="#geography">Geography</a><a href="#history">History</a><a href="#ships">Ships</a><a href="#football">Barrow AFC</a><a href="#places">Places</a><a href="#plan">Plan</a><a href="#quiz">Quiz</a><a href="#faq">FAQ</a>
-  <button id="theme" aria-label="Toggle theme">◐</button>
-</nav>
-<header class="hero" id="home">
-  <h1>Barrow-in-Furness</h1>
-  <p>A shipbuilding town at the end of the line, where Cumbria meets the Irish Sea.</p>
-  <div id="ty"></div>
-  <a class="steam" href="https://steamcommunity.com/id/PlotsCS/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.2l5.4 2.2a3 3 0 0 1 1.7-.5h.2l2.4-3.5v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.5a3 3 0 0 1-5.9.7L2.2 14.3A10 10 0 1 0 12 2zm-4.3 15.3-1.2-.5a2.2 2.2 0 1 0 1.2.5zm8.5-5.4a2.5 2.5 0 1 0-2.5-2.5 2.5 2.5 0 0 0 2.5 2.5z"/></svg>Open my Steam profile</a>
-  <svg class="sub" viewBox="0 0 150 50" aria-hidden="true"><ellipse cx="70" cy="30" rx="62" ry="13" fill="#0b1b2b"/><rect x="58" y="10" width="20" height="16" rx="5" fill="#0b1b2b"/><rect x="70" y="4" width="3" height="8" fill="#0b1b2b"/><polygon points="130,30 148,18 148,42" fill="#0b1b2b"/><circle cx="40" cy="30" r="3" fill="#e0a21b"/><circle cx="52" cy="30" r="3" fill="#e0a21b"/></svg>
-  <svg class="sea" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
-    <g class="w1"><path d="M0 60 Q150 20 300 60 T600 60 T900 60 T1200 60 T1500 60 T1800 60 T2100 60 T2400 60 V130 H0Z" fill="#0f5c99" opacity=".7"/></g>
-    <g class="w2"><path d="M0 85 Q150 50 300 85 T600 85 T900 85 T1200 85 T1500 85 T1800 85 T2100 85 T2400 85 V130 H0Z" fill="#0a3f6e"/></g>
-  </svg>
+<header>
+  <div class="hb">
+    <a class="brand" href="#home">Barrow</a>
+    <nav class="links" id="nav"><a href="#facts">Facts</a><a href="#map">Map</a><a href="#history">History</a><a href="#ships">Ships</a><a href="#football">Football</a><a href="#plan">Plan</a><a href="#quiz">Quiz</a><a href="#more">Deep dive</a><a href="#faq">FAQ</a></nav>
+    <div class="sp"></div>
+    <button class="ib" id="sb" aria-label="Search">⌘K Search</button>
+    <button class="ib" id="th" aria-label="Toggle theme">◐</button>
+    <div class="credit">Made by George Plots Allen</div>
+  </div>
+  <div class="prog" id="pg"></div>
 </header>
+
+<div class="hero" id="home">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <span class="tag">Cumbria · England</span>
+  <h1>Barrow-in-<br>Furness</h1>
+  <p class="lead">A shipbuilding town at the end of the peninsula, where submarines are built and the Bluebirds play.</p>
+  <div id="ty"></div>
+  <div class="cta">
+    <a class="btn p" href="#map">Explore the map</a>
+    <a class="btn st" href="https://steamcommunity.com/id/PlotsCS/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-10 9.2l5.4 2.2a3 3 0 0 1 1.7-.5h.2l2.4-3.5v-.1a3.8 3.8 0 1 1 3.8 3.8h-.1l-3.4 2.5a3 3 0 0 1-5.9.7L2.2 14.3A10 10 0 1 0 12 2zm-4.3 15.3-1.2-.5a2.2 2.2 0 1 0 1.2.5zm8.5-5.4a2.5 2.5 0 1 0-2.5-2.5 2.5 2.5 0 0 0 2.5 2.5z"/></svg>My Steam profile</a>
+  </div>
+  <div class="tabs" id="at" style="justify-content:center;margin:26px 0 12px"></div>
+  <div class="card" id="ac" style="max-width:520px;margin:0 auto"></div>
+</div>
+
 <main>
-  <section id="facts" class="rv">
-    <h2>Barrow in numbers</h2>
-    <div class="stats">
-      <div class="st"><b data-n="67000" data-s="+">0</b><span>residents (roughly)</span></div>
-      <div class="st"><b data-n="11" data-s=" mi">0</b><span>length of Walney Island (approx.)</span></div>
-      <div class="st"><b data-n="1901">0</b><span>year Barrow AFC formed</span></div>
-      <div class="st"><b data-n="1123">0</b><span>Furness Abbey’s origins</span></div>
+<section id="tiles"><div class="eb">Explore</div><h2>Pick a page</h2><p class="sub">Each page has its own details. Tap one to open it.</p><div class="grid" id="tg"></div></section>
+<section id="facts" class="rv">
+  <div class="eb">At a glance</div><h2>Barrow in numbers</h2>
+  <div class="grid">
+    <div class="card"><div class="num" data-n="67000" data-s="+">0</div><small>residents, roughly</small></div>
+    <div class="card"><div class="num" data-n="1123" data-r="1">0</div><small>year Furness Abbey’s story began</small></div>
+    <div class="card"><div class="num" data-n="1901" data-r="1">0</div><small>year Barrow AFC was formed</small></div>
+    <div class="card"><div class="num" data-n="2020" data-r="1">0</div><small>year the Bluebirds returned to the League</small></div>
+  </div>
+</section>
+
+<section id="map" class="rv">
+  <div class="eb">Interactive</div><h2>Explore the area</h2>
+  <p class="sub">A simple schematic map of the Furness peninsula. Tap a pin to learn more. Not to scale.</p>
+  <div class="two">
+    <div id="mapw">
+      <svg viewBox="0 0 600 380" role="img" aria-label="Schematic map of Barrow and nearby places">
+        <path class="land" d="M0 0H600V110C540 130 500 100 450 140C410 175 420 235 370 258L330 268L300 262L250 250C210 232 180 150 0 125Z"/>
+        <path class="land" d="M120 235Q150 305 235 345Q205 290 190 235Z"/>
+        <g id="pins"></g>
+      </svg>
     </div>
-  </section>
-  <section id="geography" class="rv">
-    <h2>Where is Barrow?</h2>
-    <p>Barrow-in-Furness sits at the southern tip of the Furness peninsula in Cumbria, in the north west of England. It faces Morecambe Bay and the Irish Sea, with the hills and lakes of the Lake District not far to the north.</p>
-    <p>The town is made up of the mainland, Barrow Island in the middle, and Walney Island lying just offshore, separated by the Walney Channel. Because the peninsula is a dead end, Barrow feels a bit like its own little world, a long way from the big cities.</p>
-    <p>Getting here is part of the adventure. The main road in is the A590, and the railway runs along the Furness Line, which follows the coast and the edge of the bay with some lovely views.</p>
-  </section>
-  <section id="history" class="rv">
-    <h2>A town built on iron and ships</h2>
-    <p style="color:var(--muted)">Tap a date to jump through the story.</p>
-    <div class="tl" id="tl"></div>
-    <div class="panel" id="tp"></div>
-  </section>
-  <section id="ships" class="rv">
-    <h2>Inside the submarine yard</h2>
-    <p>Barrow is the home of British submarine building. Tap each class below to find out more.</p>
-    <details><summary>Vanguard class</summary><p>These large submarines carry the UK’s Trident missile system and were built in Barrow. They are being replaced by the Dreadnought class.</p></details>
-    <details><summary>Astute class</summary><p>A newer class of nuclear-powered attack submarines, also built in Barrow. They are packed with sonar and technology and are among the most advanced the Royal Navy has operated.</p></details>
-    <details><summary>Dreadnought class</summary><p>The next generation of ballistic missile submarines, currently being built at the yard. They will take over the Vanguard class’s role in the coming years.</p></details>
-    <details><summary>Devonshire Dock Hall</summary><p>A huge covered shipbuilding hall built in the 1980s. Submarines can be assembled indoors here, away from the weather, which is why the building stands out so much on the skyline.</p></details>
-    <details><summary>Why Barrow?</summary><p>The deep water, the long industrial tradition and a workforce with generations of skills have kept the yard here for well over a century.</p></details>
-  </section>
-  <section id="football" class="rv">
-    <h2>Barrow AFC: the Bluebirds</h2>
-    <p>Founded in 1901 and based at Holker Street, Barrow joined the Football League in 1921. They lost that status in 1972, then spent decades in non-league football before winning promotion back in 2020. Few comebacks feel as hard-earned as that one.</p>
-    <div class="stats"><div class="st"><b>1921</b><span>joined the League</span></div><div class="st"><b>1972</b><span>lost League status</span></div><div class="st"><b>2020</b><span>returned to the League</span></div></div>
-  </section>
-  <section id="places" class="rv">
-    <h2>Places to explore</h2>
-    <div class="tabs" id="tabs"></div>
-    <div class="panel" id="pp"></div>
-  </section>
-  <section id="plan" class="rv">
-    <h2>Plan your day out</h2>
-    <p style="color:var(--muted)">Pick what you’re into and get ideas.</p>
-    <div class="tabs" id="chips"></div>
-    <div class="panel" id="plp"></div>
-  </section>
-  <section id="quiz" class="rv">
-    <h2>Barrow quiz</h2>
-    <div class="q" id="qz"></div>
-  </section>
+    <div class="card info" id="inf"></div>
+  </div>
+</section>
+
+<section id="history" class="rv">
+  <div class="eb">Timeline</div><h2>A town built on iron and ships</h2>
+  <div class="tl" id="tl"></div>
+</section>
+
+<section id="ships" class="rv">
+  <div class="eb">Shipbuilding</div><h2>Inside the submarine yard</h2>
+  <p class="sub">Barrow is the home of British submarine building. Pick a class to find out more.</p>
+  <div class="sw"><svg viewBox="0 0 150 50" aria-hidden="true"><ellipse cx="70" cy="30" rx="62" ry="13" fill="#0b1b2b"/><rect x="58" y="10" width="20" height="16" rx="5" fill="#0b1b2b"/><polygon points="130,30 148,18 148,42" fill="#0b1b2b"/><circle cx="40" cy="30" r="3" fill="#f59e0b"/><circle cx="52" cy="30" r="3" fill="#f59e0b"/></svg></div>
+  <div class="tabs" id="st"></div>
+  <div class="card" id="sp2"></div>
+</section>
+
+<section id="football" class="rv">
+  <div class="eb">Barrow AFC</div><h2>The Bluebirds</h2>
+  <p class="sub">Founded in 1901 and based at Holker Street. A story of loyalty, heartbreak and a famous comeback.</p>
+  <div class="grid">
+    <div class="card hv"><div class="num">1921</div><h3>Joined the League</h3><p>Barrow entered the Football League.</p></div>
+    <div class="card hv"><div class="num">1972</div><h3>Lost League status</h3><p>The club dropped out and spent decades in non-league football.</p></div>
+    <div class="card hv"><div class="num">2020</div><h3>Back where they belong</h3><p>Promotion returned the Bluebirds to the League after nearly fifty years.</p></div>
+  </div>
+</section>
+
+<section id="plan" class="rv">
+  <div class="eb">Day out</div><h2>Plan your day</h2>
+  <p class="sub">Filter by what you’re into. Click a card to see it on the map.</p>
+  <div class="tabs" id="fl"></div>
+  <div class="grid" id="pc"></div>
+</section>
+
+<section id="quiz" class="rv">
+  <div class="eb">Test yourself</div><h2>Barrow quiz</h2><p class="sub">Every round picks 8 random questions from a bank of 24, and the answers are shuffled each time, so hitting “Play again” gives you a fresh quiz.</p>
+  <div class="card" id="qz"></div>
+</section>
+
+<section id="more" class="rv">
+  <div class="eb">Deep dive</div><h2>Everything else worth knowing</h2>
+  <p class="sub">Tap any topic to read more.</p>
+  <details><summary>The Furness peninsula</summary><p>Furness is cut off from the rest of the county by Morecambe Bay and its sands, which is why it was once known as Lancashire north of the Sands. That isolation helped the area develop its own identity.</p></details>
+  <details><summary>Barrow Island</summary><p>The middle part of the town is Barrow Island, joined to the mainland by bridges. Much of the shipyard sits around the island and the Walney Channel.</p></details>
+  <details><summary>Walney Island wildlife</summary><p>Walney has nature reserves at both ends, with lots of seabirds and a colony of gulls. It is also home to the Walney geranium, a rare pink flower that grows almost nowhere else.</p></details>
+  <details><summary>Morecambe Bay</summary><p>One of the largest bays in Britain, with a huge tidal range, fast tides and patches of quicksand. Guided walks across the sands exist, but never try crossing without an official guide.</p></details>
+  <details><summary>Barrow in the Second World War</summary><p>Because the shipyard built warships and submarines, Barrow was a target during the 1941 Blitz. Many homes were damaged and the town was rebuilt afterwards.</p></details>
+  <details><summary>The shipyard today</summary><p>The yard is a secure working site, so you can’t just walk in. You can still see the Dock Hall from outside, and the Dock Museum explains how it all works.</p></details>
+  <details><summary>Barrow AFC and match days</summary><p>The Bluebirds play at Holker Street in blue and white. After decades outside the League, the 2020 promotion made home games a big event for the town.</p></details>
+  <details><summary>Weather and climate</summary><p>Barrow has a mild, windy, fairly wet maritime climate. Sea breezes keep winters milder than inland, but pack a waterproof anyway.</p></details>
+  <details><summary>Nearby: Ulverston</summary><p>A market town a short drive away and the birthplace of Stan Laurel of Laurel and Hardy. It has a Laurel and Hardy museum.</p></details>
+  <details><summary>Nearby: the Lake District</summary><p>Lakes like Coniston Water and Windermere are within driving distance, so Barrow makes a good base for a mix of coast and mountains.</p></details>
+  <details><summary>Getting around</summary><p>Trains on the Furness Line link Barrow to nearby towns, buses cover the main routes, and Walney is easy to explore on foot or by bike.</p></details>
+</section>
 <section id="faq" class="rv">
-    <h2>Frequently asked questions</h2>
-    <details><summary>Is Barrow in Cumbria or Lancashire?</summary><p>Barrow is in Cumbria today. The Furness area used to be part of Lancashire, which is why some older maps and locals still mention it.</p></details>
-    <details><summary>What is Furness?</summary><p>Furness is the name of the peninsula Barrow sits on. It is the reason for the “in-Furness” part of the town’s name.</p></details>
-    <details><summary>What is Barrow AFC’s nickname?</summary><p>The Bluebirds, after the blue and white kits the team wears.</p></details>
-    <details><summary>Can you visit Walney Island?</summary><p>Yes. A bridge links it to Barrow, and it’s popular for walks, beaches and spotting birds.</p></details>
-    <details><summary>What is the best time to visit?</summary><p>Late spring to early autumn usually has the nicest weather for the coast and islands, but the area is worth seeing in any season if you wrap up warm.</p></details>
-  </section>
+  <div class="eb">Questions</div><h2>Good to know</h2>
+  <details><summary>Is Barrow in Cumbria or Lancashire?</summary><p>Cumbria today. The Furness area used to belong to Lancashire, which is why older maps and some locals still mention it.</p></details>
+  <details><summary>What is Furness?</summary><p>The name of the peninsula Barrow sits on, hence “Barrow-in-Furness”.</p></details>
+  <details><summary>Can you visit Walney Island?</summary><p>Yes. A bridge links it to Barrow, and it’s popular for walks, beaches and birdwatching.</p></details>
+  <details><summary>When is the best time to visit?</summary><p>Late spring to early autumn is usually mildest for the coast and islands, but it’s worth a trip in any season if you wrap up warm.</p></details>
+  <details><summary>Is Barrow a city?</summary><p>No, it’s a town. It’s the largest town in the Furness area.</p></details>
+  <details><summary>Can I see the submarines?</summary><p>The yard is a secure working site, so tours aren’t open to the public. The Dock Hall is visible from outside and the Dock Museum is the best place to learn more.</p></details>
+  <details><summary>Is it safe to walk across Morecambe Bay?</summary><p>Only with an official guide. The tides are fast and there is quicksand, so never go alone.</p></details>
+  <details><summary>How do I get there?</summary><p>By road along the A590, or by train on the Furness Line, which runs along the coast with lovely views.</p></details>
+</section>
 </main>
-<footer>Barrow-in-Furness · Made by George Plots Allen · <a href="https://steamcommunity.com/id/PlotsCS/" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Steam</a></footer>
-<button id="top" aria-label="Back to top">↑</button>
+
+<footer>Barrow-in-Furness guide · Made by George Plots Allen · <a href="https://steamcommunity.com/id/PlotsCS/" target="_blank" rel="noopener noreferrer">Steam</a><br>Facts written from general knowledge. Check details before relying on them.</footer>
+<button id="up" aria-label="Back to top">↑</button>
+
+<dialog id="pal"><input id="pi" placeholder="Search sections and places…" autocomplete="off"><div id="pr"></div></dialog>
+
 <script>
-const $=s=>document.querySelector(s);
-const hist=[
- ["1123","Abbey founded","Monks established Furness Abbey, which grew into one of the richest monasteries in the region."],
- ["1840s","Iron boom begins","Barrow was a tiny hamlet until rich iron ore deposits nearby and the Furness Railway turned it into an industrial centre."],
- ["1860s","Boom town","Docks, ironworks and steelworks arrived, and the population exploded as workers poured in."],
- ["1897","Vickers era","The shipyard became part of Vickers, cementing the town’s role in building warships and submarines."],
- ["1901","Football arrives","Barrow AFC was founded, giving the town a team to rally around."],
- ["2020","Back in the League","The Bluebirds won promotion to the Football League after nearly fifty years away."],
- ["Today","Submarine capital","Barrow builds Astute-class and Dreadnought-class submarines for the Royal Navy."]];
-const places=[
- ["Furness Abbey","Red sandstone ruins of a medieval monastery with tall arches, set in a peaceful wooded valley just outside town."],
- ["Walney Island","A long, windswept island linked to Barrow by a bridge, known for beaches, dunes and nature reserves."],
- ["Piel Castle","A ruined 14th-century fortress on a small island in the bay, reached by a short boat trip from Roa Island."],
- ["Dock Museum","A museum built over a historic dock, telling the story of shipbuilding and the town’s past."]];
-const qs=[
- ["What is Barrow most famous for building?",["Cars","Submarines","Aeroplanes","Trains"],1],
- ["What is Barrow AFC’s nickname?",["The Bluebirds","The Magpies","The Owls","The Foxes"],0],
- ["Which county is Barrow-in-Furness in?",["Lancashire","Yorkshire","Cumbria","Cheshire"],2],
- ["Which ruined abbey sits just outside Barrow?",["Fountains Abbey","Whitby Abbey","Tintern Abbey","Furness Abbey"],3]];
-function pick(box,items,panel,render,cls){
-  items.forEach((it,i)=>{const b=document.createElement("button");b.textContent=it[0];b.onclick=()=>{[...box.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");panel.innerHTML=render(it)};box.appendChild(b);if(!i)b.click()})}
-pick($("#tl"),hist,$("#tp"),h=>`<h3>${h[0]} · ${h[1]}</h3><p>${h[2]}</p>`);
-pick($("#tabs"),places,$("#pp"),p=>`<h3>${p[0]}</h3><p>${p[1]}</p>`);
-let qi=0,score=0;
-function quiz(){const box=$("#qz");
-  if(qi>=qs.length){box.innerHTML=`<h3>You scored ${score} / ${qs.length}</h3><p>${score==qs.length?"Perfect, you know your Barrow!":"Not bad. Read the sections again and retry."}</p><button class="next" id="rs">Play again</button>`;$("#rs").onclick=()=>{qi=0;score=0;quiz()};return}
-  const [q,o,a]=qs[qi];
-  box.innerHTML=`<div class="meta"><span>Question ${qi+1} of ${qs.length}</span><span>Score: ${score}</span></div><h3>${q}</h3><div class="opts"></div>`;
-  const ob=box.querySelector(".opts");let done=false;
-  o.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t;b.onclick=()=>{if(done)return;done=true;if(i==a){score++;b.classList.add("ok")}else{b.classList.add("no");ob.children[a].classList.add("ok")}
-    const n=document.createElement("button");n.className="next";n.textContent=qi==qs.length-1?"See score":"Next";n.onclick=()=>{qi++;quiz()};box.appendChild(n)};ob.appendChild(b)})}
-quiz();
-const plan={History:[["Furness Abbey","Wander the red sandstone ruins and imagine life as a medieval monk."],["Dock Museum","See how Barrow’s ships and submarines were built."]],Nature:[["Walney Island","Beach walks, dunes and plenty of birdlife."],["Morecambe Bay shoreline","Big skies and wide views across the water."]],Football:[["Holker Street","Catch a Barrow AFC home game and join the Bluebirds’ fans."]],Adventure:[["Piel Castle","Take a short boat trip to a ruined island fortress."],["Walney Bridge","Cross over to the island and explore."]]};
-const chips=$("#chips");Object.keys(plan).forEach((k,i)=>{const b=document.createElement("button");b.textContent=k;b.onclick=()=>{[...chips.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");$("#plp").innerHTML=plan[k].map(p=>`<p class="card"><b>${p[0]}:</b> ${p[1]}</p>`).join("")};chips.appendChild(b);if(!i)b.click()});
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const P=[
+{id:"abbey",n:"Furness Abbey",t:"History",x:360,y:155,d:"The red sandstone ruins of a medieval monastery in a quiet wooded valley just outside the town. Its tall arches make it one of the area’s most atmospheric sights."},
+{id:"barrow",n:"Barrow town centre",t:"History",x:300,y:235,d:"The heart of the town, shaped by the shipyard and the Victorian boom. The Dock Museum tells the story of the area’s shipbuilding past."},
+{id:"holker",n:"Holker Street",t:"Football",x:270,y:200,d:"Home of Barrow AFC. Catch a matchday and join the Bluebirds’ fans."},
+{id:"walney",n:"Walney Island",t:"Nature",x:175,y:285,d:"A long, windswept island linked to Barrow by a bridge, known for beaches, dunes and birdlife."},
+{id:"roa",n:"Roa Island",t:"Adventure",x:385,y:290,d:"A small island linked to the mainland by a causeway. Boats to Piel Castle leave from here."},
+{id:"piel",n:"Piel Castle",t:"Adventure",x:300,y:325,d:"A ruined 14th-century fortress on a small island in the bay, reached by a short boat trip."}];
+const H=[["1123","Abbey founded","Monks established Furness Abbey, which grew into one of the richest monasteries in the region."],["1840s","Iron boom","Rich iron ore and the Furness Railway turned a tiny hamlet into an industrial centre."],["1860s","Boom town","Docks, ironworks and steelworks arrived and the population exploded."],["1897","Vickers era","The shipyard joined Vickers, cementing Barrow’s role in warships and submarines."],["1901","Football arrives","Barrow AFC was founded."],["1921","League football","Barrow AFC joined the Football League."],["1941","The Blitz","Because of its shipyard, Barrow was bombed during the Second World War and many homes were damaged."],["1972","Leaving the League","Barrow AFC lost League status and began decades in non-league football."],["1980s","Dock Hall rises","The Devonshire Dock Hall was built so submarines could be assembled under cover."],["2020","Back in the League","The Bluebirds won promotion after nearly fifty years away."],["Today","Submarine capital","Barrow builds Astute-class and Dreadnought-class submarines for the Royal Navy."]];
+const S={"Early ships":"Before submarines took over, the yard built warships and passenger liners, and the area even tried out early airships, including one nicknamed the Mayfly in 1911.","The yard today":"BAE Systems Submarines runs the yard. It is the area’s biggest employer and trains apprentices in skills like welding, engineering and design.","Vanguard":"Large submarines that carry the UK’s Trident missile system. All were built in Barrow, and they are being replaced by the Dreadnought class.","Astute":"Nuclear-powered attack submarines packed with sonar and technology, among the most advanced the Royal Navy has operated.","Dreadnought":"The next generation of ballistic missile submarines, being built at the yard to take over the Vanguard class’s role.","Dock Hall":"The Devonshire Dock Hall is a huge covered shipbuilding hall from the 1980s, letting submarines be assembled indoors and dominating the skyline."};
+const Q=[["What is Barrow most famous for building?",["Cars","Submarines","Aeroplanes","Trains"],1],["What is Barrow AFC’s nickname?",["The Bluebirds","The Magpies","The Owls","The Foxes"],0],["Which county is Barrow in today?",["Lancashire","Yorkshire","Cumbria","Cheshire"],2],["Which ruined abbey is near Barrow?",["Fountains","Whitby","Tintern","Furness"],3],["What links Walney Island to the town?",["A tunnel","A bridge","A ferry only","A cable car"],1],["In which year did Barrow return to the Football League?",["1972","2005","2020","1999"],2]];
+let sel="abbey";
+// map
+const pins=$("#pins");P.forEach(p=>{const g=document.createElementNS("http://www.w3.org/2000/svg","g");g.setAttribute("class","pin");g.setAttribute("tabindex","0");g.id="pin-"+p.id;g.innerHTML=`<circle cx="${p.x}" cy="${p.y}" r="10"/><text x="${p.x+16}" y="${p.y+4}">${p.n}</text>`;g.onclick=()=>show(p.id);g.onkeydown=e=>{if(e.key=="Enter")show(p.id)};pins.appendChild(g)});
+function show(id){sel=id;const p=P.find(x=>x.id==id);$$(".pin").forEach(g=>g.classList.toggle("on",g.id=="pin-"+id));$("#inf").innerHTML=`<span class="chip">${p.t}</span><h3>${p.n}</h3><p>${p.d}</p>`}
+show("abbey");
+// timeline
+$("#tl").innerHTML=H.map(h=>`<div class="ti rv"><b>${h[0]}</b><h3>${h[1]}</h3><p>${h[2]}</p></div>`).join("");
+// ships
+const st=$("#st");Object.keys(S).forEach((k,i)=>{const b=document.createElement("button");b.textContent=k;b.onclick=()=>{[...st.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");$("#sp2").innerHTML=`<h3>${k}</h3><p>${S[k]}</p>`};st.appendChild(b);if(!i)b.click()});
+// plan filters
+const fl=$("#fl");["All","History","Nature","Football","Adventure"].forEach((k,i)=>{const b=document.createElement("button");b.textContent=k;b.onclick=()=>{[...fl.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");$("#pc").innerHTML=P.filter(p=>k=="All"||p.t==k).map(p=>`<button class="card" data-id="${p.id}"><span class="chip">${p.t}</span><h3>${p.n}</h3><p>${p.d.split(". ")[0].replace(/\.$/,"")}.</p></button>`).join("");$$("#pc .card").forEach(c=>c.onclick=()=>{show(c.dataset.id);location.hash="map"})};fl.appendChild(b);if(!i)b.click()});
+// quiz
+let qi=0,sc=0,best=0;try{best=+localStorage.getItem("bq")||0}catch(e){}
+function quiz(){const b=$("#qz");if(qi>=Q.length){if(sc>best){best=sc;try{localStorage.setItem("bq",sc)}catch(e){}}b.innerHTML=`<h3>You scored ${sc} / ${Q.length}</h3><p style="color:var(--mu)">Best on this device: ${best}. ${sc==Q.length?"Perfect, you know your Barrow!":"Have another go."}</p><div class="bar"><i style="width:100%"></i></div><button class="btn p" id="rs">Play again</button>`;$("#rs").onclick=()=>{qi=0;sc=0;newRound();quiz()};return}
+ const [q,o,a]=Q[qi];b.innerHTML=`<small>Question ${qi+1} of ${Q.length} · Score ${sc}</small><div class="bar"><i style="width:${qi/Q.length*100}%"></i></div><h3>${q}</h3><div id="op"></div>`;let d=0;
+ o.forEach((t,i)=>{const x=document.createElement("button");x.className="opt";x.textContent=t;x.onclick=()=>{if(d)return;d=1;if(i==a){sc++;x.classList.add("ok")}else{x.classList.add("no");$("#op").children[a].classList.add("ok")}const n=document.createElement("button");n.className="btn p";n.textContent=qi==Q.length-1?"See score":"Next";n.onclick=()=>{qi++;quiz()};b.appendChild(n)};$("#op").appendChild(x)})}
+const X=["Which sea does Barrow face?|The Irish Sea|The North Sea|The English Channel|The Baltic Sea","Which large bay is next to Barrow?|Morecambe Bay|Robin Hood’s Bay|Cardigan Bay|Tor Bay","Which national park lies to the north of Barrow?|The Lake District|Dartmoor|The Peak District|Snowdonia","Which main road leads into Barrow?|A590|M25|A1|M6 only","Which railway line serves Barrow?|The Furness Line|The Jubilee Line|The Settle line|The Northern Line","What colour is the stone of Furness Abbey?|Red|White|Grey|Yellow","Which company runs Barrow’s submarine yard today?|BAE Systems|Rolls-Royce Cars|Airbus|Siemens","In what year was Barrow AFC formed?|1901|1850|1935|1972","Where do Barrow AFC play?|Holker Street|Anfield|Villa Park|Elland Road","Which class of submarine carries the Trident missile?|Vanguard|Astute|Dreadnought|Trafalgar only","What is the Devonshire Dock Hall used for?|Building submarines|Storing food|Hosting concerts|Repairing trains","What is the name of the peninsula Barrow sits on?|Furness|Wirral|Gower|Cornwall","What does the Dock Museum tell the story of?|Shipbuilding and local history|Space travel|Medieval armour|Dinosaurs","In which century was Piel Castle built?|The 14th|The 1st|The 20th|The 9th","What colours do Barrow AFC wear?|Blue and white|Red and black|Green and gold|Purple and yellow","Which resource helped Barrow grow in the 1800s?|Iron ore|Gold|Oil|Coffee","Which Royal Navy class of attack submarines was built in Barrow?|Astute|Titanic|Spitfire|Hood","What is Walney Island famous for?|Nature reserves and birdlife|Skiing|Volcanoes|A theme park"];
+const POOL=Q.map(([q,o,a])=>[q,o[a],...o.filter((_,i)=>i!=a)]).concat(X.map(s=>s.split("|")));
+function sh(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1])}
+function newRound(){const r=sh(POOL).slice(0,8);Q.length=0;r.forEach(([q,c,...w])=>{const o=sh([c,...w]);Q.push([q,o,o.indexOf(c)])})}
+newRound();quiz();
+const A=[["Steam","Find me on Steam.","https://steamcommunity.com/id/PlotsCS/"],["X","Follow me on X (@GeorgeAlle41267).","https://x.com/GeorgeAlle41267"],["TikTok","Check out my TikTok (@_plots).","https://www.tiktok.com/@_plots"],["Roblox","Visit my Roblox profile.","https://www.roblox.com/users/2580475769/profile"]];
+const at=$("#at");A.forEach((a,i)=>{const b=document.createElement("button");b.textContent=a[0];b.onclick=()=>{[...at.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");$("#ac").innerHTML=`<h3>${a[0]}</h3><p>${a[1]}</p>`+(a[2]?`<p style="margin-top:14px"><a class="btn p" href="${a[2]}" target="_blank" rel="noopener noreferrer">Open ${a[0]} ↗</a></p>`:"")};at.appendChild(b);if(!i)b.click()});
 // typewriter
-const lines=["Home of the submarines.","Home of the Bluebirds.","Gateway to Walney Island."];let li=0,ci=0,del=false;
-(function t(){const s=lines[li];$("#ty").textContent=s.slice(0,ci);
-  if(!del&&ci<s.length){ci++;setTimeout(t,70)}else if(!del){del=true;setTimeout(t,1400)}else if(ci>0){ci--;setTimeout(t,35)}else{del=false;li=(li+1)%lines.length;setTimeout(t,300)}})();
+const L=["Home of the submarines.","Home of the Bluebirds.","Gateway to Walney Island."];let li=0,ci=0,dl=0;
+(function t(){const s=L[li];$("#ty").textContent=s.slice(0,ci);if(!dl&&ci<s.length){ci++;setTimeout(t,70)}else if(!dl){dl=1;setTimeout(t,1400)}else if(ci>0){ci--;setTimeout(t,35)}else{dl=0;li=(li+1)%L.length;setTimeout(t,300)}})();
 // reveal + counters
-const cnt=el=>{const n=+el.dataset.n,s=el.dataset.s||"",t0=performance.now();(function f(t){const p=Math.min((t-t0)/1400,1);el.textContent=Math.round(n*p).toLocaleString("en-GB").replace(/,/g,n>2000&&n<2100?"":",")+(p==1?s:"");if(p<1)requestAnimationFrame(f)})(t0)};
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-n]").forEach(cnt);io.unobserve(e.target)}}),{threshold:.15});
-document.querySelectorAll(".rv").forEach(e=>io.observe(e));
-// scroll UI
-const links=[...document.querySelectorAll("nav a")],secs=links.map(a=>document.querySelector(a.getAttribute("href")));
-addEventListener("scroll",()=>{const h=document.documentElement,y=scrollY;
-  $("#bar").style.width=(y/(h.scrollHeight-innerHeight)*100)+"%";$("#top").classList.toggle("show",y>500);
-  let cur=0;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.35)cur=i});links.forEach((a,i)=>a.classList.toggle("on",i==cur))},{passive:true});
-$("#top").onclick=()=>scrollTo({top:0});
-// theme
-$("#theme").onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+const cnt=e=>{const n=+e.dataset.n,s=e.dataset.s||"",r=e.dataset.r,t0=performance.now();(function f(t){const p=Math.min((t-t0)/1400,1),v=Math.round(n*p);e.textContent=(r?v:v.toLocaleString("en-GB"))+(p==1?s:"");if(p<1)requestAnimationFrame(f)})(t0)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-n]").forEach(cnt);io.unobserve(e.target)}}),{threshold:.12});
+$$(".rv").forEach(e=>io.observe(e));
+// scroll ui
+const lk=$$("#nav a"),sc2=lk.map(a=>$(a.getAttribute("href")));
+addEventListener("scroll",()=>{const h=document.documentElement;$("#pg").style.width=scrollY/(h.scrollHeight-innerHeight)*100+"%";$("#up").classList.toggle("s",scrollY>600);},{passive:true});
+$("#up").onclick=()=>scrollTo({top:0});
+$("#th").onclick=()=>{const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+// command palette
+const items=[...lk.map(a=>({n:a.textContent,k:"Section",go:()=>{location.hash=a.getAttribute("href")}})),...P.map(p=>({n:p.n,k:p.t,go:()=>{show(p.id);location.hash="map"}}))];
+const pal=$("#pal"),pi=$("#pi");let pl=[],pk=0;
+function draw(){const q=pi.value.toLowerCase();pl=items.filter(i=>i.n.toLowerCase().includes(q)||i.k.toLowerCase().includes(q));pk=0;$("#pr").innerHTML=pl.map((i,x)=>`<button class="${x?"":"on"}" data-i="${x}">${i.n}<span>${i.k}</span></button>`).join("")||"<p style='padding:12px;color:var(--mu)'>No results</p>";$$("#pr button").forEach(b=>b.onclick=()=>{pal.close();pl[b.dataset.i].go()})}
+function openP(){pi.value="";draw();pal.showModal();pi.focus()}
+$("#sb").onclick=openP;pal.addEventListener("click",e=>{if(e.target==pal)pal.close()});
+addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()=="k"){e.preventDefault();pal.open?pal.close():openP()}});
+pi.oninput=draw;pi.onkeydown=e=>{const b=$$("#pr button");if(e.key=="ArrowDown"||e.key=="ArrowUp"){e.preventDefault();pk=(pk+(e.key=="ArrowDown"?1:-1)+b.length)%b.length;b.forEach((x,i)=>x.classList.toggle("on",i==pk))}if(e.key=="Enter"&&pl[pk]){pal.close();pl[pk].go()}};
+const V=lk.map(a=>a.getAttribute("href").slice(1));
+const PG={
+facts:["Facts","Quick facts and key numbers","Barrow-in-Furness is a town and borough in Cumbria, at the southern end of the Furness peninsula and facing Morecambe Bay and the Irish Sea. It grew very quickly in the Victorian era, and many of its streets were laid out during that boom."],
+map:["Map","Interactive map of the area","The map is a simplified drawing, so use a proper map app for directions. Most of these sights are only a short drive apart, though Piel Castle needs a boat from Roa Island."],
+history:["History","Timeline from 1123 to today","Barrow’s story has three big chapters: the medieval abbey, the Victorian industrial boom and the modern submarine yard. Each one shaped the town you can see today."],
+ships:["Ships","Inside the submarine yard","Building a submarine takes years and thousands of people, from welders and engineers to designers and project managers. Sections of each boat are built separately and then joined together."],
+football:["Football","Barrow AFC, the Bluebirds","Barrow’s supporters stuck with the club through the long years outside the League. Their blue and white colours give the team its nickname, the Bluebirds."],
+plan:["Plan","Day-out ideas by interest","Handy tips: check opening times before you go, bring a waterproof and keep your phone charged. Boat trips to Piel Castle depend on the weather and tides."],
+quiz:["Quiz","Random questions every round","Try a few rounds and see how high you can score. The questions and answer order change every time you play again."],
+more:["Deep dive","More topics to read","These are the extra details that didn’t fit anywhere else. Use the Search button at the top to jump to any place quickly."],
+faq:["FAQ","Common questions answered","Can’t find what you’re looking for? Press the Search button at the top to find pages and places fast."]};
+$("#tg").innerHTML=V.map(k=>`<a class="card hv" href="#${k}"><h3>${PG[k][0]}</h3><p>${PG[k][1]}</p></a>`).join("");
+V.forEach((k,i)=>{const s=$("#"+k),n=V[i+1];s.insertAdjacentHTML("afterbegin",'<a class="btn" href="#home" style="margin-bottom:22px">← Back home</a>');s.insertAdjacentHTML("beforeend",`<p style="margin-top:28px">${PG[k][2]}</p>`+(n?`<a class="btn p" href="#${n}" style="margin-top:8px">Next: ${PG[n][0]} →</a>`:""))});
+function route(){const h=location.hash.slice(1),v=V.includes(h)?h:"home";document.body.dataset.v=v;V.forEach(k=>$("#"+k).classList.toggle("cur",k==v));lk.forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+v));scrollTo(0,0)}
+addEventListener("hashchange",route);route();
 </script>
 </body>
 </html>
