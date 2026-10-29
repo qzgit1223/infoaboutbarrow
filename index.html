@@ -77,6 +77,19 @@ dialog::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
 #pr button:hover,#pr button.on{background:var(--ln)}#pr span{color:var(--mu);font-size:.8rem}
 footer{border-top:1px solid var(--ln);padding:34px 18px 50px;text-align:center;color:var(--mu);font-size:.88rem}
 #up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);opacity:0;pointer-events:none;transition:.3s;z-index:40}#up.s{opacity:1;pointer-events:auto}
+@keyframes up{from{opacity:0;transform:translateY(24px)}}
+h1{background-size:200% 200%;animation:up .9s .15s backwards,gs 8s ease infinite}@keyframes gs{50%{background-position:100% 50%}}
+.tag{animation:up .8s backwards,bob 4s 1s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-5px)}}
+.hero .lead{animation:up .9s .35s backwards}.hero #ty{animation:up .9s .45s backwards}.hero .cta{animation:up .9s .55s backwards}#at{animation:up .9s .7s backwards}#ac{animation:up .9s .8s backwards}
+.grid>*{animation:up .6s backwards}.grid>:nth-child(2){animation-delay:.07s}.grid>:nth-child(3){animation-delay:.14s}.grid>:nth-child(4){animation-delay:.21s}.grid>:nth-child(5){animation-delay:.28s}.grid>:nth-child(6){animation-delay:.35s}.grid>:nth-child(n+7){animation-delay:.42s}
+.info>*,#sp2>*,#ac>*,#qz>*{animation:up .4s backwards}
+.ti::before{animation:pulse 2.4s infinite}@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.5)}70%,100%{box-shadow:0 0 0 10px rgba(245,158,11,0)}}
+.pin circle{animation:pp 2.6s infinite}@keyframes pp{50%{stroke-width:6;stroke-opacity:.55}}
+.opt.ok{animation:pop .4s}@keyframes pop{50%{transform:scale(1.04)}}.opt.no{animation:shake .4s}@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.btn{position:relative;overflow:hidden}.btn.st::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:sh 3.5s infinite}@keyframes sh{to{left:130%}}
+.tabs button{transition:.2s}.tabs button:active,.btn:active{transform:scale(.95)}
+.card.hv:hover,button.card:hover{transform:perspective(700px) translateY(-4px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+#glow{position:fixed;left:0;top:0;width:380px;height:380px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(37,99,235,.15),transparent 65%);transform:translate(-50%,-50%);z-index:-1}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -272,6 +285,10 @@ $("#tg").innerHTML=V.map(k=>`<a class="card hv" href="#${k}"><h3>${PG[k][0]}</h3
 V.forEach((k,i)=>{const s=$("#"+k),n=V[i+1];s.insertAdjacentHTML("afterbegin",'<a class="btn" href="#home" style="margin-bottom:22px">← Back home</a>');s.insertAdjacentHTML("beforeend",`<p style="margin-top:28px">${PG[k][2]}</p>`+(n?`<a class="btn p" href="#${n}" style="margin-top:8px">Next: ${PG[n][0]} →</a>`:""))});
 function route(){const h=location.hash.slice(1),v=V.includes(h)?h:"home";document.body.dataset.v=v;V.forEach(k=>$("#"+k).classList.toggle("cur",k==v));lk.forEach(a=>a.classList.toggle("on",a.getAttribute("href")=="#"+v));scrollTo(0,0)}
 addEventListener("hashchange",route);route();
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
+document.body.insertAdjacentHTML("beforeend",'<div id="glow"></div>');
+addEventListener("pointermove",e=>{const g=$("#glow");g.style.left=e.clientX+"px";g.style.top=e.clientY+"px";const c=e.target.closest&&e.target.closest(".hv,button.card");if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*10+"deg");c.style.setProperty("--rx",-((e.clientY-r.top)/r.height-.5)*10+"deg")});
+addEventListener("pointerout",e=>{const c=e.target.closest&&e.target.closest(".hv,button.card");if(c){c.style.setProperty("--rx","0deg");c.style.setProperty("--ry","0deg")}})}
 </script>
 </body>
 </html>
